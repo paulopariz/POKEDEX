@@ -1,12 +1,13 @@
 <template>
   <v-app>
     <v-container>
+      <div class="logo"><img  :src="image"/></div>
       <v-container>
         <v-text-field v-model="search" label="Pesquisar" placeholder="Charmander" color></v-text-field>
 
         {{ search }}
 
-        <v-row>
+        <v-row class="pt-9">
           <v-col cols="2" v-for="pokemon in filtered_pokemons" :key="pokemon.name">
 
             <v-card @click="show_pokemon(get_id(pokemon))">
@@ -86,6 +87,7 @@
 
 <script>
   import axios from "axios";
+  import image from "./assets/pokemon.svg"
 
   export default {
     name: 'App',
@@ -98,12 +100,13 @@
         search: "",
         show_dialog: false,
         selected_pokemon: null,
+        image: image,
       };
     },
 
     mounted() {
       axios
-        .get("https://pokeapi.co/api/v2/pokemon?limit=151")
+        .get("https://pokeapi.co/api/v2/pokemon?limit=150")
         .then((response) => {
           this.pokemons = response.data.results;
         });
@@ -169,5 +172,24 @@
         hsl(0deg 85% 40%) 25%,
         hsl(0deg 84% 34%) 79%,
         hsl(0deg 82% 28%) 100%);
+  }
+  
+  .logo{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .logo img{
+    width: 40%;
+  }
+
+  .theme--light.v-label {
+    color: white;
+  }
+
+  input{
+    color: white;
   }
 </style>
