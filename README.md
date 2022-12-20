@@ -17,7 +17,7 @@
 - VUETIFY
 
 ## 📍 Deploy:
-- <a href="">CLIQUE AQUI PARA VER O PROJETO</a>
+- <a href="https://mini-pokedex-two.vercel.app/">CLIQUE AQUI PARA VER O PROJETO</a>
 
 ## 🌐 API:
 - <a href="https://pokeapi.co/">pokeapi.co</a>
@@ -30,7 +30,7 @@
 <br>
 
 ```
-git clone https://github.com/paulopariz/.git
+git clone https://github.com/paulopariz/mini-pokedex.git
 ```
 
 ```
